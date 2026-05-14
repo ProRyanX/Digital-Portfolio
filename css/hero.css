@@ -251,8 +251,21 @@ PHOTO
 
 /* ============ TABLET (≤900px) ============ */
 @media (max-width: 900px) {
-    .hero-layout { grid-template-columns: 1fr; }
-    .hero-photo-wrap { display: none; }
+    .hero-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    .hero-photo-wrap {
+        display: flex;
+        justify-content: center;
+        margin-right: 0;
+        margin-bottom: 0;
+        order: -1;
+    }
+    .hero-photo {
+        width: 140px;
+        height: 170px;
+    }
     .hero-content { max-width: 100%; }
 }
 
