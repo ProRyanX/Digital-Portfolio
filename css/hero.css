@@ -68,7 +68,6 @@ nav {
     flex-direction: column;
     z-index: 99;
 }
-.nav-drawer.open { display: flex; }
 .nav-drawer a {
     display: block;
     font-size: 0.8rem;
@@ -262,6 +261,7 @@ PHOTO
     nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
     .nav-toggle { display: flex; }
+    .nav-drawer.open { display: flex; }
     
     .hero {
         padding: 5.5rem 1.25rem 3rem;
