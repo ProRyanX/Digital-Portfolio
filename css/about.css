@@ -1,6 +1,8 @@
-/* =============================================
-    ABOUT & EDUCATION
-    ============================================= */
+/* 
+=============================================
+ABOUT & EDUCATION
+============================================= 
+*/
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -8,15 +10,9 @@
     align-items: start;
 }
 
-.about-text p {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 2;
-    margin-bottom: 1.5rem;
-}
+.about-text p { font-size: 0.9rem; color: var(--muted); line-height: 2; margin-bottom: 1.5rem; }
 .about-text p strong { color: var(--text); font-weight: 400; }
 
-/* Education cards */
 .edu-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -36,28 +32,10 @@
     background: linear-gradient(90deg, var(--accent), var(--teal));
 }
 
-.edu-uni {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.3rem;
-}
+.edu-uni { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
 .edu-degree { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.8rem; }
-
-.edu-cgpa {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--accent2);
-    letter-spacing: -0.04em;
-}
-.edu-cgpa-label {
-    font-size: 0.65rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
+.edu-cgpa { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--accent2); letter-spacing: -0.04em; }
+.edu-cgpa-label { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
 
 .sem-row { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
 .sem-badge {
@@ -71,6 +49,11 @@
 }
 .sem-badge span { color: var(--green); }
 
+/* ============ MOBILE (≤768px) ============ */
 @media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-text p { font-size: 0.85rem; }
+    .edu-uni { font-size: 0.88rem; }
+    .edu-degree { font-size: 0.75rem; }
+    .edu-cgpa { font-size: 1.3rem; }
 }

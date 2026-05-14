@@ -1,11 +1,9 @@
-/* =============================================
-    HOBBIES
-    ============================================= */
-.hobbies-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
+/* 
+=============================================
+HOBBIES
+============================================= 
+*/
+.hobbies-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 
 .hobby-card {
     background: var(--surface);
@@ -17,10 +15,7 @@
     flex-direction: column;
     gap: 0.75rem;
 }
-.hobby-card:hover {
-    border-color: var(--border2);
-    transform: translateY(-3px);
-}
+.hobby-card:hover { border-color: var(--border2); transform: translateY(-3px); }
 
 .hobby-icon-wrap {
     width: 44px; height: 44px;
@@ -33,27 +28,10 @@
     flex-shrink: 0;
 }
 
-.hobby-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.05rem;
-    letter-spacing: -0.02em;
-    color: var(--text);
-}
+.hobby-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: -0.02em; color: var(--text); }
+.hobby-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.9; flex: 1; }
 
-.hobby-desc {
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.9;
-    flex: 1;
-}
-
-.hobby-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.5rem;
-}
+.hobby-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
 .hobby-tag {
     font-size: 0.65rem;
     padding: 0.25rem 0.7rem;
@@ -63,11 +41,12 @@
     letter-spacing: 0.06em;
     transition: all 0.15s;
 }
-.hobby-tag:hover {
-    color: var(--text);
-    border-color: var(--accent2);
-}
+.hobby-tag:hover { color: var(--text); border-color: var(--accent2); }
 
+/* ============ MOBILE (≤768px) ============ */
 @media (max-width: 768px) {
-    .hobbies-grid { grid-template-columns: 1fr; }
+    .hobbies-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .hobby-card { padding: 1.5rem; }
+    .hobby-title { font-size: 0.95rem; }
+    .hobby-desc { font-size: 0.78rem; }
 }

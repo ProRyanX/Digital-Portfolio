@@ -1,6 +1,8 @@
-/* =============================================
-    BASE — Variables, Reset, Typography, Scrollbar
-    ============================================= */
+/* 
+==================================================
+BASE — Variables, Reset, Typography, Scrollbar
+================================================== 
+*/
 
 :root {
     --bg:       #0a0a0f;
@@ -21,11 +23,7 @@
     --glow:     rgba(108,99,255,0.15);
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
 
@@ -37,7 +35,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Noise overlay */
 body::before {
     content: '';
     position: fixed;
@@ -48,15 +45,13 @@ body::before {
     opacity: 0.5;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar       { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
-/* Shared headings */
 h1 {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 5vw, 4rem); /* ← HERO NAME SIZE: change clamp(min, vw, max) to adjust */
+    font-size: clamp(2rem, 5vw, 4rem); /* ← HERO NAME SIZE */
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.04em;
@@ -70,7 +65,6 @@ h1 .line2 {
     font-weight: 400;
 }
 
-/* Section shared */
 section {
     padding: 6rem 3rem;
     max-width: 1100px;
@@ -87,16 +81,11 @@ section {
     color: var(--accent2);
     margin-bottom: 3rem;
 }
-.section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-}
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
 .section-title {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(1.5rem, 3vw, 2.2rem); /* ← SECTION TITLE SIZE: adjust clamp values here */
+    font-size: clamp(1.5rem, 3vw, 2.2rem); /* ← SECTION TITLE SIZE */
     font-weight: 800;
     letter-spacing: -0.04em;
     line-height: 1.1;
@@ -110,7 +99,6 @@ section {
     max-width: 560px;
 }
 
-/* Buttons */
 .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -145,21 +133,13 @@ section {
 }
 .btn-ghost:hover { color: var(--text); border-color: var(--accent); }
 
-/* Fade-in animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(24px);
-    animation: fadeIn 0.7s ease forwards;
-}
-@keyframes fadeIn {
-    to { opacity: 1; transform: translateY(0); }
-}
+.fade-in { opacity: 0; transform: translateY(24px); animation: fadeIn 0.7s ease forwards; }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
-/* =============================================
-    RESPONSIVE
-    ============================================= */
+/* ============ MOBILE (≤768px) ============ */
 @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
+    section { padding: 3.5rem 1.25rem; }
+    
+    .section-label { font-size: 0.62rem; margin-bottom: 2rem; }
+    .section-subtitle { font-size: 0.82rem; margin-bottom: 2.5rem; }
 }

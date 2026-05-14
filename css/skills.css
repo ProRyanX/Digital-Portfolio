@@ -1,9 +1,11 @@
-/* =============================================
-    SKILLS
-    ============================================= */
+/* 
+=============================================
+SKILLS
+============================================= 
+*/
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
 }
 
@@ -16,27 +18,9 @@
 }
 .skill-group:hover { border-color: var(--border2); transform: translateY(-3px); }
 
-.skill-group-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.25rem;
-}
-.skill-icon {
-    width: 36px; height: 36px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-}
-.skill-group-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
+.skill-group-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.skill-icon { width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+.skill-group-title { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
 
 .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .skill-pill {
@@ -48,15 +32,18 @@
     letter-spacing: 0.04em;
     transition: all 0.15s;
 }
-.skill-pill:hover {
-    color: var(--text);
-    border-color: var(--accent);
-    background: var(--glow);
-}
+.skill-pill:hover { color: var(--text); border-color: var(--accent); background: var(--glow); }
 
-/* Full-bleed background band */
 .section-band {
     background: var(--bg2);
-    padding: 6rem clamp(1.5rem, 6vw, 3rem);
+    padding: 6rem clamp(1.25rem, 6vw, 3rem);
 }
 .section-band > .inner { max-width: 1100px; margin: 0 auto; }
+
+/* ============ MOBILE (≤768px) ============ */
+@media (max-width: 768px) {
+    .section-band { padding: 3.5rem 1.25rem; }
+    .skills-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .skill-group { padding: 1.25rem; }
+    .skill-pill { font-size: 0.68rem; padding: 0.3rem 0.7rem; }
+}

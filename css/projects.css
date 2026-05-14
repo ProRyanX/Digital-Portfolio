@@ -1,6 +1,8 @@
-/* =============================================
-    PROJECTS
-    ============================================= */
+/* 
+=============================================
+PROJECTS
+============================================= 
+*/
 .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 
 .project-card {
@@ -53,13 +55,7 @@
     line-height: 1.2;
 }
 
-.project-desc {
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.9;
-    margin-bottom: 1.5rem;
-    flex: 1;
-}
+.project-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.9; margin-bottom: 1.5rem; flex: 1; }
 
 .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
 .tech-tag {
@@ -85,29 +81,23 @@
 }
 .project-link:hover { gap: 10px; }
 
-.project-highlights {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-}
-.highlight-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 0.78rem;
-    color: var(--muted);
-    line-height: 1.6;
-}
-.highlight-item::before {
-    content: '▸';
-    color: var(--accent2);
-    flex-shrink: 0;
-    margin-top: 0.15rem;
+.project-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+.highlight-item { display: flex; align-items: flex-start; gap: 8px; font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+.highlight-item::before { content: '▸'; color: var(--accent2); flex-shrink: 0; margin-top: 0.15rem; }
+
+/* ============ TABLET (≤900px) ============ */
+@media (max-width: 900px) {
+    .project-highlights { grid-template-columns: 1fr; }
 }
 
+/* ============ MOBILE (≤768px) ============ */
 @media (max-width: 768px) {
-    .projects-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .project-card { padding: 1.5rem; }
     .project-card.featured { grid-column: auto; }
-    .project-highlights { grid-template-columns: 1fr; }
+    .project-title { font-size: 1.1rem; }
+    .project-desc { font-size: 0.78rem; }
+    .project-tag { font-size: 0.6rem; letter-spacing: 0.1em; }
+    .highlight-item { font-size: 0.75rem; }
+    .tech-tag { font-size: 0.62rem; }
 }
