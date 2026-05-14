@@ -1,0 +1,165 @@
+/* =============================================
+    BASE — Variables, Reset, Typography, Scrollbar
+    ============================================= */
+
+:root {
+    --bg:       #0a0a0f;
+    --bg2:      #111118;
+    --bg3:      #16161f;
+    --surface:  #1c1c28;
+    --surface2: #242435;
+    --border:   rgba(255,255,255,0.07);
+    --border2:  rgba(255,255,255,0.12);
+    --text:     #f0f0f5;
+    --muted:    #7a7a9a;
+    --accent:   #6c63ff;
+    --accent2:  #a78bfa;
+    --teal:     #2dd4bf;
+    --coral:    #f87171;
+    --amber:    #fbbf24;
+    --green:    #4ade80;
+    --glow:     rgba(108,99,255,0.15);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Noise overlay */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.5;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* Shared headings */
+h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem); /* ← HERO NAME SIZE: change clamp(min, vw, max) to adjust */
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+}
+h1 .line2 {
+    display: block;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--accent2);
+    font-weight: 400;
+}
+
+/* Section shared */
+section {
+    padding: 6rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 3rem;
+}
+.section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem); /* ← SECTION TITLE SIZE: adjust clamp values here */
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 3.5rem;
+    max-width: 560px;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    padding: 0.85rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+.btn-primary:hover { background: var(--accent2); transform: translateY(-2px); }
+
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    padding: 0.85rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid var(--border2);
+    transition: all 0.2s;
+}
+.btn-ghost:hover { color: var(--text); border-color: var(--accent); }
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeIn 0.7s ease forwards;
+}
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+    RESPONSIVE
+    ============================================= */
+@media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+}
